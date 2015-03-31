@@ -1,0 +1,28 @@
+﻿
+    <ion-view>
+    <ion-nav-bar class="bar-dark">
+         <ion-nav-back-button class="button-clear icon ion-ios7-arrow-back"></ion-nav-back-button>
+        <!-- <button menu-toggle="left" class="button button-icon icon ion-navicon"></button> -->
+        <h1 class="title">资讯详情</h1>
+        </ion-nav-bar>
+      <ion-content class="has-header">
+        
+     <div class="list card">
+       <ion-item >
+                        <h2 ng-bind-html="newsDetail.title"></h2>
+        
+                        <p ng-bind-html="newsDetail.subTitle"></p>
+                        
+        </ion-item>
+         <div class="item item-body">
+         <p ng-bind-html="newsDetail.content"></p>
+  
+             <br>  
+             
+        <div  class="button button-clear" ng-repeat="tag in tags"  ui-sref="tagNews({tagName:tag.tagName})" ui-sref-active="active"><span style=" text-decoration:underline">{{tag.tagName}}</span></div>  
+                                                             
+            </div>
+            
+        </div>
+      </ion-content>  
+      </ion-view>

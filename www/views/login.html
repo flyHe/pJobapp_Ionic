@@ -1,0 +1,25 @@
+﻿
+
+<ion-view title="login">
+<ion-header-bar class="bar-dark">
+    <h1 class="title">登录</h1>
+</ion-header-bar>
+<ion-content>
+ 
+ <form ng-submit="signIn(username, password)">
+<div class="list list-inset">
+        <label class="item item-input item-stacked-label">
+            <input type="text" placeholder="用户名" ng-model="username" required="required">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <input type="password" placeholder="密码"  ng-model="password" required="required">
+        </label>
+ </div>
+  <div class="list list-inset">
+        <button class="button button-block  button-dark" type="submit">
+                                                            登录
+       </button>
+  </div>
+  </form>
+</ion-content>
+</ion-view>

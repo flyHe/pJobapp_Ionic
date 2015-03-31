@@ -1,0 +1,37 @@
+ <ion-header-bar class="bar-dark">
+    <button class="button icon ion-ios7-arrow-back  button-clear" onclick="javascript:history.go(-1)"></button>
+        <h1 class="title">摇一摇</h1>
+ </ion-header-bar>
+ <ion-content >
+   
+  <div class="item item-avatar ">
+    <img src="img/Circulate.png">
+    <h2 class="assertive">摇一摇</h2>
+    <p>附近的公司</p>
+  </div>
+
+  <a class="item item-icon-left assertive" >
+    <i class="icon ion-ios7-loop-strong"></i>
+    开始摇一摇
+  </a>
+ 
+  <p class="item item-icon-left assertive" ng-if="loading">
+    <i class="icon ion-ios7-reloading"></i>
+    正在搜寻附近的公司...
+  </p>
+ 
+<div class="list card">
+ <a href="#" class="item"  ng-repeat="checkedRecord in checkedRecords" ng-bind-html="checkedRecord.compnay.companyName">
+  <!--  href="#/company/{{checkedRecord.id}}" -->
+ </a>   
+ <p>纬度lat=<span  ng-bind-html="lat"></span></p>
+ <p>经度long=<span ng-bind-html="long"></span></p>
+ <p>加速度x=<span  ng-bind-html="x"></span></p>
+ <p>加速度y=<span  ng-bind-html="y"></span></p>
+ <p>加速度z=<span ng-bind-html="z"></span></p>
+</div>
+
+  </ion-content>
+ <div class="bar bar-footer bar-dark" >
+  <div class="title">附近的公司</div>
+</div>

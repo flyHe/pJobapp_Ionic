@@ -1,0 +1,24 @@
+﻿
+<ion-view>
+
+  <ion-content class="has-header">
+  <br><br>
+   <ion-item ng-repeat="item in items" href="#/newsDetail/{{item.id}}">
+
+       
+        <h2 ng-bind-html="item.title"></h2>
+        <p ng-bind-html="item.subTitle"></p>
+    </ion-item>
+
+
+    <ion-infinite-scroll
+            on-infinite="loadMore()"
+            ng-if="moreDataCanBeLoaded"
+            icon="ion-loading-c"
+            distance="1%">
+    </ion-infinite-scroll>
+</ion-list>
+        <p style="color: lightskyblue;text-align: center" ng-if="!moreDataCanBeLoaded">没有更多的内容啦</p>
+        <br><br>
+  </ion-content>
+  </ion-view>

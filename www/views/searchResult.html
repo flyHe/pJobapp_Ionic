@@ -1,0 +1,27 @@
+﻿
+       
+       <ion-view>
+
+         <ion-content class="has-header">
+         <br><br>
+          <ion-list>
+
+            <ion-item ng-repeat="searchResult in searchResults" href="#/result/{{searchResult.jId}}">
+
+                <h2 ng-bind-html="searchResult.jobName"></h2>
+                <p ng-bind-html="searchResult.compName"></p>
+                
+            </ion-item>
+
+
+            <ion-infinite-scroll
+                    on-infinite="loadMore()"
+                    ng-if="moreDataCanBeLoaded"
+                    icon="ion-loading-c"
+                    distance="1%">
+            </ion-infinite-scroll>
+        </ion-list>
+        <p style="color: lightskyblue;text-align: center" ng-if="!moreDataCanBeLoaded">没有更多的内容啦</p>
+        <br><br>
+         </ion-content>
+         </ion-view>

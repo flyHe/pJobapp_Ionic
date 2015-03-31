@@ -1,0 +1,47 @@
+﻿
+
+              <ion-view>
+              <ion-nav-bar class="bar-dark">
+                  <!--  <ion-nav-back-button class="button-clear icon ion-ios7-arrow-back"></ion-nav-back-button> -->
+                  <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+                  <h1 class="title">搜索职位</h1>
+              </ion-nav-bar>
+              <div class="bar bar-subheader item-input-inset">
+                          <label class="item-input-wrapper">
+                              <i class="icon ion-ios7-search placeholder-icon"></i>
+                              <input type="search" placeholder="请输入搜索内容" ng-model="key" required="required">
+                          </label>
+                          <button ui-sref="app.search.searchResult({key:key})" ui-sref-active="active" class="button button-clear">
+                              搜索
+                          </button>
+              </div>
+                  
+                 <ion-nav-view name="searchResult" animation="slide-left-right">
+                      <ion-view>
+                          <ion-content class="has-header">
+                          <br><br>
+                          <div class="list list-inset">
+                                      <div class="item item-divider">
+                                                                                     常用关键字
+                                      </div>
+                                  
+                              <div  class="button button-clear" ng-repeat="usualKey in usualKeys" ui-sref="app.search.searchResult({key:usualKey.keyName})" ui-sref-active="active"><span style=" text-decoration:underline">{{usualKey.keyName}}</span></div>  
+                                                                                      
+                                     </div>
+                                         
+                                    
+                                    <div class="list list-inset">
+                                      <div class="item item-divider">
+                                                                                     近三天关键字
+                                      </div>
+                                    
+                                       <div   class="button button-clear"  ng-repeat="recentKey in recentKeys" ui-sref="app.search.searchResult({key:recentKey.keyName})" ui-sref-active="active"><span style=" text-decoration:underline">{{recentKey.keyName}}</span></div> 
+                                   
+                                    </div>
+                             
+                          </ion-content>
+                      </ion-view>
+                </ion-nav-view>
+                 
+
+              </ion-view>
